@@ -17,7 +17,7 @@ export const ContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(themeSwitch, initialState)
 
   useEffect(() => {
-    axios('https://jsonplaceholder.typicode.com/users%27')
+    axios('https://jsonplaceholder.typicode.com/users')
       .then(res => setData(res.data))
   }, [state]);
 
