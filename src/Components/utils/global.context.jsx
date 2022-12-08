@@ -2,11 +2,11 @@ import axios from "axios";
 import { createContext, useContext, useEffect, useReducer, useState } from "react";
 import { themeSwitch } from "./themeSwitch";
 
-export const initialState = { theme: "", data: [] }
+export const initialState = { theme: "light", data: "css light?" }
 
 export const ContextGlobal = createContext();
 
-export const useGlobalState = () => {
+export const useGlobalStates = () => {
   return useContext(ContextGlobal)
 }
 
