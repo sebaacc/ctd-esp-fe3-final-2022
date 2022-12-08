@@ -4,7 +4,7 @@ import {ContextGlobal} from "../Components/utils/global.context"
 
 
 const Card = ({ name, username, id }) => {
-
+/*
   const[Theme, favs, setFavs] = useContext(ContextGlobal);
 
   const addFavoritos = (e)=>{
@@ -17,16 +17,21 @@ const Card = ({ name, username, id }) => {
   
   }
 
+  onClick={addFavoritos} esto va en el boton
+  
+*/
   return (
     <div className="card">
         {/* En cada card deberan mostrar en name - username y el id */}
-        <img src="/images/doctor.jpg" alt="imagen-doctor"/>
-        <h3>{username}{id}</h3>
+        <img src="/images/doctor.jpg" alt="imagen-doctor" width={200}/>
+        <h3>{name}</h3>
+        <p>{username}</p>
+        <p>id: {id}</p>
         <link to={id}/>
         {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
 
         {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
-        <button onClick={addFavoritos} className="favButton">⭐Add fav</button>
+        <button  className="favButton">⭐Add fav</button>
     </div>
   );
 };

@@ -6,12 +6,11 @@ import { ContextGlobal } from './utils/global.context'
 
 const Navbar = () => {
 
- const [Theme] = useContext(ContextGlobal)
+ //const [Theme] = useContext(ContextGlobal)
 
   return (
     <nav>
       {/* Aqui deberan agregar los liks correspondientes a las rutas definidas */}
-      {/*estoy agregando links para las rutas*/}
       <Link to='/'><h3>Home</h3></Link>
       <Link to='/Contact'><h3>Contact</h3></Link>
       <Link to='/Favs'><h3>Favs</h3></Link>

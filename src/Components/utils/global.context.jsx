@@ -4,7 +4,7 @@ import { themeSwitch } from "./themeSwitch";
 
 export const initialState = { theme: "", data: [] }
 
-export const ContextGlobal = createContext(undefined);
+export const ContextGlobal = createContext();
 
 export const useGlobalState = () => {
   return useContext(ContextGlobal)

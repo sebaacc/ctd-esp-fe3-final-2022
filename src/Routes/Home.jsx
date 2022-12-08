@@ -6,17 +6,16 @@ import { useGlobalState } from '../Components/utils/global.context'
 
 const Home = () => {
 
-  const {data} = useGlobalState()
+  const { data } = useGlobalState()
 
   return (
-    <main className="" >
-      {console.log(data[1].name)}
+    <main className="">
       <h1>Home</h1>
       <div className='card-grid'>
-        {data.name.map(() => <Card key={data.id} name={data.name} username={data.username} id={data.id}/>)}
+        {data.map(item => <Card key={item.id} name={item.name} username={item.username} id={item.id} />)}
       </div>
     </main>
   )
 }
 
-export default Home
+export default Home;

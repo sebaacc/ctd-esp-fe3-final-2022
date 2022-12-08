@@ -4,7 +4,7 @@ import { ContextGlobal } from './utils/global.context'
 
 const Footer = () => {
 
-  const [Theme] = useContext(ContextGlobal)
+  //const [Theme] = useContext(ContextGlobal)
   
   return (
     <footer>
