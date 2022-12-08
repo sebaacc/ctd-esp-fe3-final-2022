@@ -27,7 +27,7 @@ export const ContextProvider = ({ children }) => {
     </ContextGlobal.Provider>
   );
 
-  
+
 };
 
 export default ContextProvider;

@@ -18,9 +18,9 @@ const Navbar = () => {
       <Link to='/Favs'><h3>Favs</h3></Link>
       {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
       {state.theme === 'light' ?
-        <button onClick={() => dispatch({ type: 'SWITCH_DARK', payload: 'dark' })}> Change theme dark icono lunita </button>
+        <button onClick={() => dispatch({ type: 'SWITCH_DARK', payload: 'dark' })}> 🌙 </button>
         :
-        <button onClick={() => dispatch({ type: 'SWITCH_LIGHT', payload: 'light' })}> Change theme light icono sol </button>
+        <button onClick={() => dispatch({ type: 'SWITCH_LIGHT', payload: 'light' })}> ☀️ </button>
       }
     </nav>
   )

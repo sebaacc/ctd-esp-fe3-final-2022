@@ -7,16 +7,16 @@ import { useGlobalStates } from '../Components/utils/global.context'
 
 const Home = () => {
 
-  const { data, loading, setLoading } = useGlobalStates()
+  const { data, loading, setLoading, state } = useGlobalStates()
 
   useEffect(() => {
     setTimeout(() => {
       setLoading(false)
     }, 2000)
-  }, [] )
+  }, [])
 
   return (
-    <main className="">
+    <main className={state.data}>
       {loading ? 'Cargando...'
         :
         <>
