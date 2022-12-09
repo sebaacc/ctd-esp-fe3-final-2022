@@ -15,6 +15,7 @@ export const ContextProvider = ({ children }) => {
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true)
   const [state, dispatch] = useReducer(themeSwitch, initialState)
+  const [favs, setFavs] = useState([])
 
   useEffect(() => {
     axios('https://jsonplaceholder.typicode.com/users')
@@ -22,7 +23,7 @@ export const ContextProvider = ({ children }) => {
   }, [state]);
 
   return (
-    <ContextGlobal.Provider value={{ data, loading, setLoading, state, dispatch }}>
+    <ContextGlobal.Provider value={{ data, loading, setLoading, state, dispatch, favs, setFavs }}>
       {children}
     </ContextGlobal.Provider>
   );
