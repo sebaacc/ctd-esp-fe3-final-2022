@@ -13,7 +13,7 @@ const Card = ({ name, username, id }) => {
     let favoritos = localStorage.getItem("favoritos") || "[]";
     favoritos = JSON.parse(favoritos);
 
-    let posLista = favoritos.findIndex(function(e) { return e.id == datos.id; });
+    let posLista = favoritos.findIndex(function(e) { return e.id === datos.id; });
 
     if (posLista > -1) {
       favoritos.splice(posLista, 1);
