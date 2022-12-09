@@ -1,5 +1,6 @@
 
 import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import Card from '../Components/Card'
 import { useGlobalStates } from '../Components/utils/global.context'
 
@@ -22,7 +23,7 @@ const Home = () => {
         <>
           <h1>Home</h1>
           <div className='card-grid'>
-            {data?.map(item => <Card key={item.id} name={item.name} username={item.username} id={item.id} />)}
+            {data?.map(item => <Link to={'/dentist/' + item.id}> <Card key={item.id} name={item.name} username={item.username} id={item.id} /> </Link>)}
           </div>
         </>
       }
