@@ -28,7 +28,9 @@ nav {
   display: flex;
   width: 80vw;
   justify-content: flex-start;
+  align-items: center;
   padding: 1rem;
+  margin: auto
 }
 
 a {
@@ -44,7 +46,7 @@ a:hover {
 
 footer {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   text-align: center;
   padding: 2rem;
   position: relative;
@@ -52,6 +54,13 @@ footer {
   width: 90%;
   height: 40px;
   margin-top: 2rem;
+}
+
+.iconsBox {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  align-items: center;
 }
 
 footer>img {

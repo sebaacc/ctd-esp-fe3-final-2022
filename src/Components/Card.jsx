@@ -28,8 +28,10 @@ const Card = ({ name, username, id }) => {
     localStorage.setItem('favoritos', JSON.stringify(favoritos));
   }
 
+  const { state } = useGlobalStates()
+
   return (
-    <div className="card">
+    <div className= {"card " + state.theme} >
       {/* En cada card deberan mostrar en name - username y el id */}
       <img src="/images/doctor.jpg" alt="imagen-doctor" width={200} />
       <h3>{name}</h3>

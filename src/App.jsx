@@ -14,7 +14,7 @@ function App() {
   const { state } = useGlobalStates()
 
   return (
-    <div className={state.theme}>
+    <div className={"App " + state.theme}>
 
       <Navbar />
       <Routes>
