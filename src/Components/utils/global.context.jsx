@@ -2,7 +2,7 @@ import axios from "axios";
 import { createContext, useContext, useEffect, useReducer, useState } from "react";
 import { themeSwitch } from "./themeSwitch";
 
-export const initialState = { theme: "light", data: "css light?" }
+export const initialState = { theme: 'light' }
 
 export const ContextGlobal = createContext();
 
