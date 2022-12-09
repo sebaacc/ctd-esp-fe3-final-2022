@@ -8,8 +8,9 @@ const Form = () => {
   const [inputFields, setInputFields] = useState({
     nombre: "",
     email: "",
-    errorMessages: {}
   });
+
+  const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
     const espacio = e.target.name;
@@ -19,15 +20,24 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const validateName = /^. {5,}$/.test(inputFields.nombre);
-    const validateEmail = /^\w+([.-]? \w+)*@\w+([.-]? \w+)*(\. \w{2,3})+$/.test(inputFields.email);
 
-    if(validateName === false  ||  validateEmail === false ){
-      throw Error ("La información proporcionada es incorrecta, verifiquela nuevamente")
-    }else{
-      alert("Gracias, pronto te contactaremos")
+    const errors = {};
+
+    const validateName = /^.{5,}$/.test;
+    const validateEmail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test;
+
+    if (!validateName(inputFields.nombre)) {
+      errors.nombre = "nombre incorrecto";
     }
-  }
+    if (!validateEmail(inputFields.email)) {
+      errors.email = "email incorrecto";
+    }
+    setErrors(errors);
+
+    if (!Object.keys(errors).length) {
+      alert(JSON.stringify(inputFields, null, 2));
+    }
+  };
 
   return (
     <div>
@@ -36,7 +46,19 @@ const Form = () => {
         <br></br>
         <input type="email" name="email" id="email" placeholder="Email" onChange={handleChange}/>
         <br></br>
-    <button type="submit">Submit</button>
+    <button type="submit" onChange={handleChange}>Submit</button>
+    <br />
+      {Object.entries(errors).map(([key, error]) => (
+        <span
+          key={`${key}: ${error}`}
+          style={{
+            fontWeight: "bold",
+            color: "red"
+          }}
+        >
+          {key}: {error}
+        </span>
+      ))}
     </form>
     </div>
   );
