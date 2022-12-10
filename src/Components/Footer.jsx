@@ -1,6 +1,5 @@
 import React from 'react'
-import { useContext } from 'react'
-import { ContextGlobal, useGlobalStates } from './utils/global.context'
+import { useGlobalStates } from './utils/global.context'
 
 const Footer = () => {
 
@@ -9,7 +8,7 @@ const Footer = () => {
   return (
     <footer className={state.theme} >
       <p>Powered by</p>
-      <img src="/images/DH.png" alt='DH-logo'/>
+      <img src="/images/DH.png" alt='DH-logo' />
       <div className='iconsBox'>
         <a href="https://es-la.facebook.com/digitalhouseschool/" target="_blank"><i className="fa-brands fa-facebook face"></i></a>
         <a href="https://www.instagram.com/_digitalhouse/?hl=es" target="_blank"><i className="fa-brands fa-instagram insta"></i></a>

@@ -27,10 +27,19 @@ h1 {
 nav {
   display: flex;
   width: 80vw;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   padding: 1rem;
   margin: auto
+}
+
+nav div {
+  display: flex;
+  align-items: center;
+}
+
+nav h2 span {
+  color: red;
 }
 
 a {
@@ -51,7 +60,6 @@ footer {
   padding: 2rem;
   position: relative;
   bottom: 0;
-  width: 90%;
   height: 40px;
   margin-top: 2rem;
 }
@@ -133,4 +141,30 @@ tr:nth-child(even) {
 
 .dark>a {
   color: white;
+}
+
+.switchButton {
+  width: 45px;
+  padding: 10px;
+  border: none;
+  border-radius: 25%;
+  font-size: 17px;
+  transition-duration: 0.4s;
+  box-sizing: border-box;
+}
+
+.switchButton:hover {
+  background-color: #797979;
+  color: white;
+}
+
+.switchButton .dark {
+  width: 45px;
+  padding: 10px;
+  border: none;
+  border-radius: 25%;
+  font-size: 17px;
+  transition-duration: 0.4s;
+  box-sizing: border-box;
+  color: #000;
 }

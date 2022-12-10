@@ -1,27 +1,27 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
-import { ContextGlobal, useGlobalStates } from './utils/global.context'
-
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+import { useGlobalStates } from './utils/global.context'
 
 const Navbar = () => {
-
-  //const [Theme] = useContext(ContextGlobal)
 
   const { state, dispatch } = useGlobalStates()
 
   return (
     <nav className={state.theme} >
-      {/* Aqui deberan agregar los liks correspondientes a las rutas definidas */}
-      <Link to='/'><h3>Home</h3></Link>
-      <Link to='/Contact'><h3>Contact</h3></Link>
-      <Link to='/Favs'><h3>Favs</h3></Link>
-      {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
-      {state.theme === 'light' ?
-        <button onClick={() => dispatch({ type: 'SWITCH_DARK', payload: 'dark' })}> 🌛 </button>
-        :
-        <button onClick={() => dispatch({ type: 'SWITCH_LIGHT', payload: 'light' })}> ☀️ </button>
-      }
+      <div>
+        <h2><span>DH</span> Odonto</h2>
+      </div>
+      <div>
+        <Link to='/'><h3>Home</h3></Link>
+        <Link to='/Contact'><h3>Contact</h3></Link>
+        <Link to='/Favs'><h3>Favs</h3></Link>
+
+        {state.theme === 'light' ?
+          <button className='switchButton' onClick={() => dispatch({ type: 'SWITCH_DARK', payload: 'dark' })}> 🌛 </button>
+          :
+          <button className={'switchButton ' + state.theme} onClick={() => dispatch({ type: 'SWITCH_LIGHT', payload: 'light' })}> ☀️ </button>
+        }
+      </div>
     </nav>
   )
 }

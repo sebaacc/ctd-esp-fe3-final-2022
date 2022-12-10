@@ -15,7 +15,6 @@ function App() {
 
   return (
     <div className={"App " + state.theme}>
-
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />
@@ -24,8 +23,6 @@ function App() {
         <Route path="/dentist/:id" element={<Detail />} />
       </Routes>
       <Footer />
-
-
     </div>
   );
 }

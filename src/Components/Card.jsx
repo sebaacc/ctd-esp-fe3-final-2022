@@ -1,7 +1,5 @@
 import React from "react";
-
 import { useGlobalStates } from "./utils/global.context";
-
 
 const Card = ({ name, username, id }) => {
 
@@ -13,7 +11,7 @@ const Card = ({ name, username, id }) => {
     let favoritos = localStorage.getItem("favoritos") || "[]";
     favoritos = JSON.parse(favoritos);
 
-    let posLista = favoritos.findIndex(function(e) { return e.id === datos.id; });
+    let posLista = favoritos.findIndex(function (e) { return e.id === datos.id; });
 
     if (posLista > -1) {
       favoritos.splice(posLista, 1);
@@ -31,16 +29,12 @@ const Card = ({ name, username, id }) => {
   const { state } = useGlobalStates()
 
   return (
-    <div className= {"card " + state.theme} >
-      {/* En cada card deberan mostrar en name - username y el id */}
+    <div className={"card " + state.theme} >
       <img src="/images/doctor.jpg" alt="imagen-doctor" width={200} />
       <h3>{name}</h3>
       <p>{username}</p>
       <p>id: {id}</p>
       <link to={id} />
-      {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
-
-      {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
       <button onClick={addFav} className="favButton">⭐Add fav</button>
     </div>
   );

@@ -3,15 +3,10 @@ import axios from "axios";
 import { useParams } from "react-router-dom"
 import { ContextGlobal, useGlobalStates } from "../Components/utils/global.context"
 
-
-
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
-
 const Detail = () => {
 
   const { state } = useGlobalStates()
 
-  // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
   const params = useParams();
 
   const [dent, setDent] = useState({});
