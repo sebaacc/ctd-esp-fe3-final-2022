@@ -6,11 +6,15 @@ import Contact from "./Routes/Contact"
 import Detail from "./Routes/Detail"
 import Favs from "./Routes/Favs"
 import { Route, Routes } from "react-router-dom";
+import { useGlobalStates } from "./Components/utils/global.context";
 
 
 function App() {
+
+  const { state } = useGlobalStates()
+
   return (
-    <div className="App">
+    <div className={"App " + state.theme}>
 
       <Navbar />
       <Routes>

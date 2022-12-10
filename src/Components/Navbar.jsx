@@ -11,7 +11,7 @@ const Navbar = () => {
   const { state, dispatch } = useGlobalStates()
 
   return (
-    <nav>
+    <nav className={state.theme} >
       {/* Aqui deberan agregar los liks correspondientes a las rutas definidas */}
       <Link to='/'><h3>Home</h3></Link>
       <Link to='/Contact'><h3>Contact</h3></Link>

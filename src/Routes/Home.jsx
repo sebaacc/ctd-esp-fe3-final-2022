@@ -17,7 +17,7 @@ const Home = () => {
   }, [])
 
   return (
-    <main className={state.data}>
+    <main className={state.theme}>
       {loading ? 'Cargando...'
         :
         <>
