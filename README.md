@@ -1,5 +1,7 @@
 # ctd-fe3-final
 
+Estudiantes: Laura Caterine Vanegas, Sebastián Alejo Markoja
+
 Examen Final de Frontend III
 
 ## Indice
