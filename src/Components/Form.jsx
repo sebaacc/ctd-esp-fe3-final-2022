@@ -10,8 +10,6 @@ const Form = () => {
     email: "",
   });
 
-  const [errors, setErrors] = useState({});
-
   const handleChange = (e) => {
     const espacio = e.target.name;
     const valor = e.target.value;
@@ -19,47 +17,39 @@ const Form = () => {
   };
 
   const handleSubmit = (e) => {
+
     e.preventDefault();
 
-    const errors = {};
+    const validateName = /^.{5,}$/.test(inputFields.nombre);
+    const validateEmail = /^\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/.test(inputFields.email);
 
-    const validateName = /^.{5,}$/.test;
-    const validateEmail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test;
+    let formulario = document.querySelector("form");
+    let mensajes = document.querySelectorAll("p");
 
-    if (!validateName(inputFields.nombre)) {
-      errors.nombre = "nombre incorrecto";
-    }
-    if (!validateEmail(inputFields.email)) {
-      errors.email = "email incorrecto";
-    }
-    setErrors(errors);
+    mensajes.forEach((e) => {
+      e.remove();
+    });
 
-    if (!Object.keys(errors).length) {
-      alert(JSON.stringify(inputFields, null, 2));
+    if (validateName === false || validateEmail === false) {
+      let error = document.createElement("p");
+      error.innerHTML = "Información incorrecta, vuelva a intentarlo por favor.";
+      formulario.after(error);
+    } else {
+      let message = document.createElement("p");
+      message.innerHTML = `Te contactaremos cuanto antes vía mail ${inputFields.nombre}, muchas gracias.`;
+      formulario.after(message);
     }
   };
 
   return (
-    <div>
-    <form onSubmit={(e) => handleSubmit(e)}>
-        <input type="text" name="nombre" id="nombre" placeholder="Nombre" onChange={handleChange}/>
-        <br></br>
-        <input type="email" name="email" id="email" placeholder="Email" onChange={handleChange}/>
-        <br></br>
-    <button type="submit" onChange={handleChange}>Submit</button>
-    <br />
-      {Object.entries(errors).map(([key, error]) => (
-        <span
-          key={`${key}: ${error}`}
-          style={{
-            fontWeight: "bold",
-            color: "red"
-          }}
-        >
-          {key}: {error}
-        </span>
-      ))}
-    </form>
+    <div className="form">
+      <form onSubmit={handleSubmit}>
+        <input type="text" name="nombre" id="nombre" placeholder="Nombre" onChange={handleChange} />
+        <input type="email" name="email" id="email" placeholder="Email" onChange={handleChange} />
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <input type="submit" value="Enviar" className="inputForm" />
+        </div>
+      </form>
     </div>
   );
 };
